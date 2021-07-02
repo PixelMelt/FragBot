@@ -5,7 +5,9 @@ A hypixel skyblock bot that allows a user to run dungeons without a party. There
 To use this bot in perticular you need... 
 
 #1 An alt account in the same hypixel guild as you. (could be changed in later updates)
+
 #2 Nodejs installed on your computer.
+
 #3 Intelligence.
 
 # Prerequisites and Install
