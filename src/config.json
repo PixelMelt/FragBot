@@ -1,0 +1,16 @@
+{
+    
+    "email": "mymail@gmail.com",
+    "password": "mypassword",
+
+    "owner": "Pixelmelt",
+
+    "intro1": "Welcome, to Pixruns. Courtesy of Skynet and developed by PixelMelt",
+    "intro2": "Enjoy!",
+    "warpmessage": "Please dont warp me. It makes me sad when you do so :(",
+
+    "timeinparty": "10",
+    "prefix": "frag",
+
+    "debug": "off"
+}
