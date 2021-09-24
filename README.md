@@ -1,4 +1,4 @@
-# Fragrun-Bot
+# Fragrun-Bot (currently broken due to changes within hypixel)
 A hypixel skyblock bot that allows a user to run dungeons without a party. There are whitelist and blacklisting options to share the bot with your friends or guildmates.
 
 # Setup
