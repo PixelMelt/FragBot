@@ -77,8 +77,8 @@ function createBot(){
     }
     function returntohub() {
         waity(5)
-        console.log(`Log > Returnung to limbo`)
-        bot.chat(`/achat §c`)
+        console.log(`Log > Returnung to hub`)
+        bot.chat(`/lobby`)
     }
     
     bot.on('chat:PARTY_WARP', ([[rank, username]]) => {
@@ -114,12 +114,13 @@ function createBot(){
                 console.log(`Log > End intro`)
                 waity(0.5)
                 bot.chat(`/pc I will be leaving this party in ${config.timeinparty} seconds...`)
-                setTimeout(leaveparty, config.timeinparty*100);
+                setTimeout(leaveparty, config.timeinparty*1000);
                 returntohub()
             }
         }else{
             waity(0.2)
             bot.chat(`/msg ${username} You are not whitelisted, please contact ${config.owner} if you think this is an error.`)
+            console.log(`Log > [${rank}] ${username} sent me a party invite but was not whitelisted`);
             return
         }
     })
@@ -135,23 +136,34 @@ function createBot(){
             console.log(`Log > ${username} read the code!`);
         }
 
+        if (message == `${config.prefix} fix`) {
+            bot.chat(`/gc Attempting to fix fragbot...`);
+            waity(0.4)
+            bot.chat(`/lobby`)
+            console.log(`Log > ${username} tried to fix me`);
+        }
+
         if(message == `${config.prefix} help`){
             if(username.toLowerCase() == config.owner.toLowerCase()){
                 console.log(`Log > ${username} asked for owner help`)
                 bot.chat(`/gc ----------Commands----------- "`)
-                waity(0.1)
+                waity(0.2)
                 bot.chat(`/gc ${config.prefix} whitelist me: whitelist yourself.`)
-                waity(0.1)
+                waity(0.2)
                 bot.chat(`/gc ${config.prefix} blacklist <player>: removes the given player from the whitelist`)
-                waity(0.1)
+                waity(0.2)
                 bot.chat(`/gc ${config.prefix} whitelist <player>: adds the given player to the whitelist`)
-                waity(0.1)
+                waity(0.2)
+                bot.chat(`/gc ${config.prefix} fix: attempt to fix the bot.`)
+                waity(0.2)
                 bot.chat(`/gc -----------------------------`)
             }else{
                 bot.chat(`/gc ----------Commands-----------`)
-                waity(0.1)
+                waity(0.2)
                 bot.chat(`/gc ${config.prefix} whitelist me: whitelist yourself.`)
-                waity(0.1)
+                waity(0.2)
+                bot.chat(`/gc ${config.prefix} fix: attempt to fix the bot.`)
+                waity(0.2)
                 bot.chat(`/gc -----------------------------`)
                 console.log(`Log > ${username} asked for help`)
             }
@@ -202,9 +214,25 @@ function createBot(){
         }
 
     })
+
+    bot.on('message', (jsonMsg) => {
+        if(jsonMsg.toString() == `You are AFK. Move around to return from AFK.`){
+            console.log(`Log > AFK message recieved, running /lobby`)
+            waity(5)
+            bot.chat(`/lobby`)
+        }
+
+        if(jsonMsg.toString() == `You are sending commands too fast! Please slow down.`){
+            console.log(`Log > Sending commands too fast!`)
+            waity(1)
+        }
+    })
     
-    bot.on('spawn', () => {
-        returntohub()
+    bot.on('scoreboardCreated', (scoreboard) => {
+        if(JSON.stringify(scoreboard.name) != `"MainScoreboard"`){
+            console.log(`Log > Incorrect scoreboard ${JSON.stringify(scoreboard.name)}. Returning to lobby.`)
+            bot.chat(`/lobby`)
+        }
     })
 
     bot.on('error', (err) => console.log(err))
