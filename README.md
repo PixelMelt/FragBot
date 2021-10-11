@@ -1,4 +1,4 @@
-# Fragrun-Bot
+# FragBot
 A hypixel skyblock bot that allows a user to run dungeons without a party. There are whitelist and blacklisting options to share the bot with your friends or guildmates.
 
 # New hypixel changes
@@ -15,9 +15,9 @@ To use this bot in perticular you need...
 
 # Prerequisites and Install
 
-Git clone this repository.  -  `git clone https://github.com/PixelMelt/Fragrun-Bot.git`
+Git clone this repository.  -  `git clone https://github.com/PixelMelt/FragBot.git`
 
-Change directory into the cloned repository.  -  `cd Fragrun-Bot/src`
+Change directory into the cloned repository.  -  `cd FragBot/src`
 
 Install the npm package mineflayer.  -  `npm i mineflayer`
 
@@ -68,5 +68,5 @@ Commands the bot responds to are as follows:
   
 # Example usage
   
-![Example of a user using the bot](https://raw.githubusercontent.com/PixelMelt/Fragrun-Bot/main/usagepic.png)
+![Example of a user using the bot](https://raw.githubusercontent.com/PixelMelt/FragBot/main/usagepic.png)
  
