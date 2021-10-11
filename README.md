@@ -2,7 +2,7 @@
 A hypixel skyblock bot that allows a user to run dungeons without a party. There are whitelist and blacklisting options to share the bot with your friends or guildmates.
 
 # New hypixel changes
-Due to the new changes to limbo the bot may get stuck and not be able to recieve party invites, it will try to fix this itself but if it fails you may need to run the `fix` command. (see bottom of readme for commands)
+While the bot still works, due to the new changes to limbo the bot may get stuck and not be able to recieve party invites, it will try to fix this itself but if it fails you may need to run the `fix` command. (see bottom of readme for commands)
 
 # Setup
 To use this bot in perticular you need... 
@@ -64,4 +64,6 @@ Commands the bot responds to are as follows:
 <prefix> whitelist me  -  This command is avalable to anyone in your guild and will add the user who invokes it to the whitelist. Allowing them to party the bot at any time.
 
 <prefix> fix  -  This command is avalable to anyone in your guild and will attempt to get the bot un stuck from limbo.
-
+  
+  
+# Example usage
