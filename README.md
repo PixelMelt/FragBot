@@ -67,3 +67,6 @@ Commands the bot responds to are as follows:
   
   
 # Example usage
+  
+![Example of a user using the bot](https://raw.githubusercontent.com/PixelMelt/Fragrun-Bot/main/usagepic.png)
+ 
