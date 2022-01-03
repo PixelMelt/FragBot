@@ -7,7 +7,7 @@ While the bot still works, due to the new changes to limbo the bot may get stuck
 # Setup
 To use this bot in perticular you need... 
 
-#1 An alt account in the same hypixel guild as you. (could be changed in later updates, make an issue request if you would party funtionality to be implemented)
+#1 An alt account in the same hypixel guild as you. (could be changed in later updates, make an issue request if you would like party funtionality to be implemented)
 
 #2 Nodejs and NPM installed on your computer.
 
