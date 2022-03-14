@@ -12,7 +12,8 @@ function createBot(){
         version: '1.12.2',
         username: config.email,
         password: config.password,
-        logErrors: true
+        logErrors: true,
+	auth: 'microsoft'
     })
     
     console.log(`Log > I joined hypixel`)
@@ -43,7 +44,7 @@ function createBot(){
     
     bot.addChatPatternSet(
         "PARTY_INVITE",
-        [/^-----------------------------\n(?:\[(.+\+?\+?)\] )?(.+) has invited you to join their party!\nYou have 60 seconds to accept. Click here to join!\n-----------------------------/],
+        [/^-----------------------------------------------------\n(?:\[(.+\+?\+?)\] )?(.+) has invited you to join their party!\nYou have 60 seconds to accept. Click here to join!\n-----------------------------------------------------/],
         {
             parse: true
         }
